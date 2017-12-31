@@ -5,27 +5,27 @@
 	Created By: Jeff Hanna
 	Modified On: December 31, 2017 
 	Modified By: Jeff Hanna
-	Tested using Max 5.1
+	Tested using Max 3ds 5.1 and 3ds Max 2018
 	
-	Copyright 2003 Lodestone Games, LLC. All Rights Reserved.
+	Copyright 2003 Lodestone Games, Llc. All Rights Reserved.
 
 	
-	Create Spirograph(tm)-like spline paths on screen. Useful for creating complex paths for particle system work.
+	Create Spirograph(Tm)-Like Spline Paths On Screen. Useful For Creating Complex Paths For Particle System Work.
 	
-	v1.33 - Updated the Macroscript and the mzp.run install file to handle Max's User Access Control compatible folders $userscripts, $usermacros, and $usericons.
-	v1.32 - Reimplemented the animation slider's ability to affect Max's time slider in real time.	
-	v1.31 - Made the execution of the BakeAnimations() function selectable in the UI.
-	v1.3 - Placed emitters now have their animations baked to keyframes. This gets around the Gamebryo path animation bug(s).
-	v1.21 - Explicity set the path constraint loop property to true.
-	v1.2 - Rewrote the path constraint code so it works with Gamebryo
-	v1.1 - Made the path constrained point objects follow the path, instead of always pointing in the same direction.
-	v1.0 - Fully functional
-	v0.98 - All done but for the path contraints
-	v0.97 - Emitter placement UI implemented. Emitter placement function prototyped.
-	v0.96 - Drop down templates fully functional.
-	v0.95 - Template drop down list in UI. Not wired up yet.
-	v0.92 - Informational dialogs and cursor wait states implemented
-	v0.9 - First drawing-loop complete version.
+	V1.33 - Updated The Macroscript And The Mzp.Run Install File To Handle Max's User Access Control Compatible Folders $Userscripts, $Usermacros, And $Usericons.
+	V1.32 - Reimplemented The Animation Slider's Ability To Affect Max's Time Slider In Real Time.	
+	V1.31 - Made The Execution Of The Bakeanimations() Function Selectable In The Ui.
+	V1.3 - Placed Emitters Now Have Their Animations Baked To Keyframes. This Gets Around The Gamebryo Path Animation Bug(S).
+	V1.21 - Explicity Set The Path Constraint Loop Property To True.
+	V1.2 - Rewrote The Path Constraint Code So It Works With Gamebryo
+	V1.1 - Made The Path Constrained Point Objects Follow The Path, Instead Of Always Pointing In The Same Direction.
+	V1.0 - Fully Functional
+	V0.98 - All Done But For The Path Contraints
+	V0.97 - Emitter Placement Ui Implemented. Emitter Placement Function Prototyped.
+	V0.96 - Drop Down Templates Fully Functional.
+	V0.95 - Template Drop Down List In Ui. Not Wired Up Yet.
+	V0.92 - Informational Dialogs And Cursor Wait States Implemented
+	V0.9 - First Drawing-Loop Complete Version.
 */
 
 
