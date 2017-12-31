@@ -1,9 +1,9 @@
-macroscript LSSpiroGraph
+macroscript LSSpirograph
 	category:"Lodestone Tools"
-	buttontext:"LSSpiroGraph"
-	tooltip:"LSSpiroGraph"
+	buttontext:"LSSpirograph"
+	tooltip:"LSSpirograph"
 	icon:#("LSSpiro",1)
 
 	(
-		Include "$scripts//Lodestone//LSSpiroGraph.ms"
+		Include "$userscripts//Lodestone//LSSpirograph.ms"
 	)

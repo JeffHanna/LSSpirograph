@@ -1,19 +1,19 @@
 /*
-	LSSpiroGraph.ms
-	Version: 1.32
+	LSSpirograph.ms
+	Version: 1.33
 	Created On: July 27, 2003 
 	Created By: Jeff Hanna
-	Modified On: August 22, 2003 
+	Modified On: December 31, 2017 
 	Modified By: Jeff Hanna
 	Tested using Max 5.1
 	
 	Copyright 2003 Lodestone Games, LLC. All Rights Reserved.
 
 	
-	Create SpiroGraph(tm)-like spline paths on screen. Useful for creating complex paths for particle system work.
+	Create Spirograph(tm)-like spline paths on screen. Useful for creating complex paths for particle system work.
 	
-	v1.32 - Reimplemented the animation slider's ability to affect Max's time slider in real time.
-	
+	v1.33 - Updated the Macroscript and the mzp.run install file to handle Max's User Access Control compatible folders $userscripts, $usermacros, and $usericons.
+	v1.32 - Reimplemented the animation slider's ability to affect Max's time slider in real time.	
 	v1.31 - Made the execution of the BakeAnimations() function selectable in the UI.
 	v1.3 - Placed emitters now have their animations baked to keyframes. This gets around the Gamebryo path animation bug(s).
 	v1.21 - Explicity set the path constraint loop property to true.
@@ -49,7 +49,7 @@
 	
 	--GLOBAL VARIABLES
 	--------------------
-	global rltLSSpiroGraph
+	global rltLSSpirograph
 	global rltDrawingDesign
 	global rltEmitters
 	
@@ -136,7 +136,7 @@
 
 		-- Set the wait cursor and display in informational dialog since this can take a while.
 		setWaitCursor()
-		createDialog rltDrawingDesign "LSSpiroGraph" width:160 height:32
+		createDialog rltDrawingDesign "LSSpirograph" width:160 height:32
 		
 		-- Create a new spline shape with it's origin at 0,0,0. Add a spline to it and add a knot at the starting x,y,z position
 		SpiroGraph = splineShape pos:[0,0,0]
@@ -182,16 +182,16 @@
 
 	fn ChangeDrawingValues FixedCircle MovingCircle PenRadius =
 	(
-		rltLSSpiroGraph.sldFixedCircleRadius.value = FixedCircle
-		rltLSSpiroGraph.lblFixedCircleRadius.text = FixedCircle as string
+		rltLSSpirograph.sldFixedCircleRadius.value = FixedCircle
+		rltLSSpirograph.lblFixedCircleRadius.text = FixedCircle as string
 		iFixedCircleRadius = FixedCircle
 		
-		rltLSSpiroGraph.sldMovingCircleRadius.value = MovingCircle
-		rltLSSpiroGraph.lblMovingCircleRadius.text = MovingCircle as string
+		rltLSSpirograph.sldMovingCircleRadius.value = MovingCircle
+		rltLSSpirograph.lblMovingCircleRadius.text = MovingCircle as string
 		iMovingCircleRadius = MovingCircle
 		
-		rltLSSpiroGraph.sldPenRadius.value = PenRadius
-		rltLSSpiroGraph.lblPenRadius.text = PenRadius as string
+		rltLSSpirograph.sldPenRadius.value = PenRadius
+		rltLSSpirograph.lblPenRadius.text = PenRadius as string
 		iPenRadius = PenRadius * -1
 	) -- end of ChangeDrawingValues function
 	
@@ -199,9 +199,9 @@
 		
 	--USER INTERFACE CONTROLS
 	-----------------------------
-	rollout rltLSSpiroGraph "LSSpiroGraph" width:162 height:400
+	rollout rltLSSpirograph "LSSpirograph" width:162 height:400
 	(
-		bitmap bmp1 "Bitmap" pos:[6,8] width:150 height:75 enabled:true fileName:"$max\ui\icons\lsspirograph.bmp"
+		bitmap bmp1 "Bitmap" pos:[6,8] width:150 height:75 enabled:true fileName:"$usericons\LSSpirograph.bmp"
 		groupBox grpTemplates "" pos:[6,80] width:150 height:56
 		dropDownList ddTemplates "Templates" pos:[10,88] width:144 height:40 items:#("Steve's Peanut", "Ed's Circle", "Matt's Eye", "Carnation", "Cardioid", "Astroid", "Four-leaved Rose", "Verticle Line", "Ellipse", "Rounded Square", "Gold Fish", "Star Fish", "Spiral In, Spiral Out", "Orbit") selection:4
 		
@@ -216,7 +216,7 @@
 		label lblStepSize "!" pos:[120,296] width:32 height:16
 		button btnDraw "Draw" pos:[6,352] width:150 height:40
 			
-		on rltLSSpiroGraph open  do
+		on rltLSSpirograph open  do
 		(
 			lblFixedCircleRadius.text = sldFixedCircleRadius.value as string
 			lblMovingCircleRadius.text = sldMovingCircleRadius.value as string
@@ -266,21 +266,21 @@
 		on btnDraw pressed  do
 		(
 			DrawSpiroGraph()
-			if querybox "Would you like to place particle emitters on this design?" title:"LSSpiroGraph" modal:true beep:false == true then
+			if querybox "Would you like to place particle emitters on this design?" title:"LSSpirograph" modal:true beep:false == true then
 			(
-				createDialog rltEmitters "LSSpiroGraph" width:165 height:287
+				createDialog rltEmitters "LSSpirograph" width:165 height:287
 			)
 		)
 	) -- end of rollout rltLSSpirograph
 	
 	
-	rollout rltDrawingDesign "LSSpiroGraph" width:160 height:32
+	rollout rltDrawingDesign "LSSpirograph" width:160 height:32
 	(
 		label lblDrawing "Drawing the design..." pos:[8,8] width:104 height:16
 	) -- end of rollout rltDrawingDesign
 	
 	
-	rollout rltEmitters "LSSpiroGraph" width:165 height:287
+	rollout rltEmitters "LSSpirograph" width:165 height:287
 	(
 		groupBox grpEmitters "" pos:[8,96] width:150 height:136
 		radioButtons rdoOrientation "Axis Orientation" pos:[18,162] width:53 height:62 labels:#("+X Up", "+Y Up", "+Z Up") default:3
@@ -340,5 +340,5 @@
 	units.SystemType = #centimeters
 	
 	sliderTime = 0
-	createDialog rltLSSpiroGraph "LSSpiroGraph" width:162 height:400
+	createDialog rltLSSpirograph "LSSpirograph" width:162 height:400
 )

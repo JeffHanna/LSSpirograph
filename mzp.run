@@ -1,16 +1,16 @@
 name "LSSpirograph"
-version 1.2
+version 1.33
 
-move "LSSpiroGraph.ms" to "$scripts\\Lodestone"
+move "LSSpirograph.ms" to "$userscripts\\Lodestone"
 
-move "LSSpiro.bmp" to "$max\\ui\\icons"
-move "LSSpiro_16a.bmp" to "$max\\ui\\icons"
-move "LSSpiro_16i.bmp" to "$max\\ui\\icons"
-move "LSSpiro_24a.bmp" to "$max\\ui\\icons"
-move "LSSpiro_24i.bmp" to "$max\\ui\\icons"
+move "LSSpirograph.bmp" to "$usericons"
+move "LSSpiro_16a.bmp" to "$usericons"
+move "LSSpiro_16i.bmp" to "$usericons"
+move "LSSpiro_24a.bmp" to "$usericons"
+move "LSSpiro_24i.bmp" to "$usericons"
 
-move "macro_LSSpiroGraph.mcr" to "$max\\ui\\macroscripts"
+move "macro_LSSpirograph.mcr" to "$usermacros"
 
-run "$max\\ui\\macroscripts\\Macro_LSSpiroGraph.mcr"
+run "$usermacros\\Macro_LSSpirograph.mcr"
 
 clear temp
